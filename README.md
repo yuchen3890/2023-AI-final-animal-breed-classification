@@ -33,3 +33,7 @@ python test.py --n_support 5 --n_way 4 --seed 1111 --current_data_path ./target_
 - set the "n_support" & "n_way" arguments according to your training setting.
 - n_support = 5 means 5 shot, n_way = 5 means 5 way.
 - set the test dataset path to the "current_data_path" argument, and modify the corresponding number of classes to "current_class".
+
+## P>M>F based Method
+
+Put MiniImageNet at ./minimagenet, Rabbit Breed at ./rabbit_breed, CUB (Caltech-UCSD Birds-200-2011) at ./CUB_200_2011, then run PMF.ipynb for training, testing and evaluation.

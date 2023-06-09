@@ -2,7 +2,7 @@
 
 ## Data Structure
 
-The repository contains the implementation for domain adaptation using the LDP-Net model. The data structure for the source and target domains is as follows:
+The data structure for the source and target domains is as follows:
 
 ### Source Domain
 - [MiniImageNet](https://drive.google.com/file/d/1uxpnJ3Pmmwl-6779qiVJ5JpWwOGl48xt/view?usp=sharing): This dataset consists of images from various categories and is used as the source domain for domain adaptation.

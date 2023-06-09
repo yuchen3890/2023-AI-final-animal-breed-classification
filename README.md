@@ -13,3 +13,21 @@ The data structure for the source and target domains is as follows:
 
 Please ensure that you download the necessary datasets and organize them properly within the corresponding source and target domain folders before running the code.
 
+## Training
+
+```
+python train.py --lamba1 1.0 --lamba2 0.15 --m 0.998 --seed 1111 --epoch 100 --train_n_eposide 100 --n_support 5 --source_data_path ./source_domain/miniImageNet/train  --pretrain_model_path  ./pretrain/399.tar  --save_dir path/to/directory/saving/ckpt
+```
+- set the "n_support" & "n_way" arguments according to your training setting.
+- n_support = 5 means 5 shot, n_way = 5 means 5 way.
+- "n_way" argument is 5 by default. You can change it by adding the argument. 
+
+
+## Testing
+
+```
+python test.py --n_support 5 --n_way 4 --seed 1111 --current_data_path ./target_domain/rabbit_breed  --current_class 4 --test_n_eposide 600  --model_path path/to/your/model/ckpt
+```
+- set the "n_support" & "n_way" arguments according to your training setting.
+- n_support = 5 means 5 shot, n_way = 5 means 5 way.
+- set the test dataset path to the "current_data_path" argument, and modify the corresponding number of classes to "current_class".

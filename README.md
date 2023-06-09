@@ -1,19 +1,21 @@
 # 2023-AI-final-animal-breed-classification
 
-## Data Structure
+## LDP-Net based Method
+
+### Data Structure
 
 The data structure for the source and target domains is as follows:
 
-### Source Domains (for training)
+#### Source Domains (for training)
 - [MiniImageNet](https://drive.google.com/file/d/1uxpnJ3Pmmwl-6779qiVJ5JpWwOGl48xt/view?usp=sharing): This dataset consists of images from various categories.
 
-### Target Domains (for testing)
+#### Target Domains (for testing)
 - [Rabbit Breed](https://drive.google.com/file/d/1XBwGkHBAwnKVmjD4DxwBv4dgsufzMlx5/view?usp=sharing): This dataset includes images of different rabbit.
 - [CUB (Caltech-UCSD Birds-200-2011)](https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz?download=1): This dataset contains images of bird species.
 
 Please ensure that you download the necessary datasets and organize them properly within the corresponding source and target domain folders before running the code.
 
-## Training
+### Training
 
 ```
 python train.py --lamba1 1.0 --lamba2 0.15 --m 0.998 --seed 1111 --epoch 100 --train_n_eposide 100 --n_support 5 --source_data_path ./source_domain/miniImageNet/train  --pretrain_model_path  ./pretrain/399.tar  --save_dir path/to/directory/saving/ckpt
@@ -23,7 +25,7 @@ python train.py --lamba1 1.0 --lamba2 0.15 --m 0.998 --seed 1111 --epoch 100 --t
 - "n_way" argument is 5 by default. You can change it by adding the argument. 
 
 
-## Testing
+### Testing
 
 ```
 python test.py --n_support 5 --n_way 4 --seed 1111 --current_data_path ./target_domain/rabbit_breed  --current_class 4 --test_n_eposide 600  --model_path path/to/your/model/ckpt
